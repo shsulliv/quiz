@@ -25,6 +25,7 @@ public class Quiz {
         score += 1;
       }
     }
+
     double percentage =
         (((double) score) / quiz.size()) * 100; // score must be converted to a double
 

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bbcf6ca2-d9f7-4105-bc49-54443e57d85f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Quiz.java" afterPath="$PROJECT_DIR$/src/Quiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/txt/answers.txt" afterPath="$PROJECT_DIR$/src/txt/answers.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/txt/right-answers.txt" afterPath="$PROJECT_DIR$/src/txt/right-answers.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +18,8 @@
       <file leaf-file-name="Quiz.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Quiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="36" column="90" lean-forward="true" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+            <state relative-caret-position="-304">
+              <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -630,12 +628,12 @@
       <updated>1496156052769</updated>
       <workItem from="1496156054628" duration="2496000" />
       <workItem from="1496219218308" duration="11652000" />
-      <workItem from="1496911208485" duration="8476000" />
+      <workItem from="1496911208485" duration="9398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22624000" />
+    <option name="totallyTimeSpent" value="23546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="23" width="1400" height="833" extended-state="0" />
@@ -820,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="36" column="90" lean-forward="true" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+        <state relative-caret-position="-304">
+          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
