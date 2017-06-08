@@ -25,8 +25,20 @@ public class Quiz {
         score += 1;
       }
     }
+    double percentage =
+        (((double) score) / quiz.size()) * 100; // score must be converted to a double
 
-    System.out.println("Your score is " + score + "/5!");
+    showResults(score, percentage, quiz);
+  }
+
+  private static void showResults(int s, double p, List<Question> q) {
+    if (p <= 50.0) {
+      System.out.println(
+          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :(");
+    } else {
+      System.out.println(
+          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :)");
+    }
   }
 
   private static List<Question> compileQuiz() throws FileNotFoundException {
