@@ -1,11 +1,13 @@
 /** Created by shannonsullivan on 5/30/17. */
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Quiz {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws FileNotFoundException {
     List<Question> quiz = compileQuiz();
     startQuiz(quiz);
   }
@@ -24,40 +26,30 @@ public class Quiz {
       }
     }
 
-    System.out.println("Your score is " + score + "/5");
+    System.out.println("Your score is " + score + "/5!");
   }
 
-  private static List<Question> compileQuiz() {
-    String[] questions = {
-      "What makes Baklava sweet?",
-      "Chantilly refers to which dessert item?",
-      "Shaved ice originated in which country?",
-      "What is the primary ingredient in Horchata?",
-      "Chocolate was first consumed as a(n)?"
-    };
+  private static List<Question> compileQuiz() throws FileNotFoundException {
+    File questionsFile = new File("./src/txt/questions.txt");
+    File answersFile = new File("./src/txt/answers.txt");
+    File rightAnswerFile = new File("./src/txt/right-answers.txt");
 
-    String[][] answers = {
-      {"Vinegar", "Sugar", "Pistachio", "Honey"}, // Honey
-      {"Whipped Cream", "Ice Cream", "Custard", "Meringue"}, // Whipped Cream
-      {"Italy", "China", "Japan", "Russia"}, // Japan
-      {"Cow Milk", "Tiger Nut", "Almond", "Sheep Milk"}, // Tiger Nut
-      {"Candy Bar", "Soup", "Alcoholic Beverage", "Milkshake"} // Alcoholic Beverage
-    };
+    List<Question> questions = new ArrayList<>();
+    Scanner questionsReader = new Scanner(questionsFile);
+    Scanner answersReader = new Scanner(answersFile);
+    Scanner rightAnswerReader = new Scanner(rightAnswerFile);
 
-    int[] indices = {3, 0, 2, 1, 2};
+    while (questionsReader.hasNextLine()) {
+      String text = questionsReader.nextLine();
+      String[] answers = new String[4];
+      for (int i = 0; i < 4; i++) {
+        answers[i] = answersReader.nextLine();
+      }
+      int answerIndex = Integer.parseInt(rightAnswerReader.nextLine());
 
-    List<Question> quiz = new ArrayList<>();
-
-    for (int i = 0; i < questions.length; i++) {
-      String questionText = questions[i];
-      String[] possibleAnswers = answers[i];
-      int rightAnswer = indices[i];
-
-      Question currentQuestion = new Question(questionText, possibleAnswers, rightAnswer);
-
-      quiz.add(currentQuestion);
+      questions.add(new Question(text, answers, answerIndex));
     }
 
-    return quiz;
+    return questions;
   }
 }
