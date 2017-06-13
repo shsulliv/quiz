@@ -15,7 +15,7 @@ public class QuizInterface {
     double percentage =
         (((double) score) / quiz.size()) * 100; // score must be converted to a double
 
-    //    showResults(score, percentage, quiz);
+    showResults(score, percentage, quiz);
   }
 
   private void askQuestion(Question question) {
@@ -46,6 +46,7 @@ public class QuizInterface {
     answersPanel.setLayout(new GridLayout(0, 1));
     controlsPanel.setLayout(new FlowLayout());
 
+    // Setup the button
     submitButton.setText("next");
     submitButton.setActionCommand("submit");
     //    submitButton.addActionListener(this);
@@ -59,6 +60,7 @@ public class QuizInterface {
     mainPanel.add(answersPanel, BorderLayout.CENTER);
     mainPanel.add(controlsPanel, BorderLayout.SOUTH);
 
+    // Setup the frame
     frame.add(mainPanel);
     frame.setTitle("Quiz Game");
     frame.pack();
@@ -71,13 +73,27 @@ public class QuizInterface {
     //    }
   }
 
-  //  private void showResults(int s, double p, List<Question> q) {
-  //    if (p <= 50.0) {
-  //      System.out.println(
-  //          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :(");
-  //    } else {
-  //      System.out.println(
-  //          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :)");
-  //    }
-  //  }
+  private void showResults(int s, double p, List<Question> q) {
+    JPanel mainPanel = new JPanel();
+    JPanel resultsPanel = new JPanel();
+    JLabel resultsLabel = new JLabel();
+
+    if (p <= 50.0) {
+      resultsLabel.setText(
+          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :(");
+    } else {
+      resultsLabel.setText(
+          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :)");
+    }
+
+    resultsPanel.add(resultsLabel);
+    mainPanel.setLayout(new BorderLayout());
+    mainPanel.add(resultsPanel, BorderLayout.CENTER);
+    frame.add(mainPanel);
+    frame.setTitle("Quiz Game");
+    frame.pack();
+    frame.setSize(600, 300);
+    frame.setVisible(true);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  }
 }
