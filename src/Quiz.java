@@ -5,6 +5,7 @@ import java.util.List;
 public class Quiz {
   public static void main(String[] args) throws FileNotFoundException {
     List<Question> quiz = QuizCompiler.compileQuiz();
-    QuizInterface.startQuiz(quiz);
+    QuizInterface ui = new QuizInterface();
+    ui.startQuiz(quiz);
   }
 }
