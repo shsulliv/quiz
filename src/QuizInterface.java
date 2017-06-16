@@ -1,10 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 /** Created by shannonsullivan on 6/9/17. */
-public class QuizInterface {
+public class QuizInterface implements ActionListener {
   private JFrame frame = new JFrame();
+  private final String SUBMIT_ACTION = "submit";
+  private final String SKIP_ACTION = "skip";
 
   public void startQuiz(List<Question> quiz) {
     int score = 0;
@@ -37,6 +41,8 @@ public class QuizInterface {
     for (int i = 0; i < answers.length; i++) {
       answerButtons[i] = new JRadioButton();
       answerButtons[i].setText(answers[i]);
+      answerButtons[i].addActionListener(this);
+      answerGroup.add(answerButtons[i]);
       answersPanel.add(answerButtons[i]);
     }
 
@@ -48,8 +54,8 @@ public class QuizInterface {
 
     // Setup the button
     submitButton.setText("next");
-    submitButton.setActionCommand("submit");
-    //    submitButton.addActionListener(this);
+    submitButton.setActionCommand(SUBMIT_ACTION);
+    submitButton.addActionListener(this);
     submitButton.setEnabled(true);
 
     // Load panels, add them to to frame
@@ -71,6 +77,16 @@ public class QuizInterface {
     //    if (input.equals(question.getRightAnswer())) {
     //      score += 1;
     //    }
+  }
+
+  public void actionPerformed(ActionEvent event) {
+    switch (event.getActionCommand()) {
+      case SUBMIT_ACTION:
+        System.out.println("Clicked");
+        break;
+      default:
+        System.out.println(event.getActionCommand());
+    }
   }
 
   private void showResults(int s, double p, List<Question> q) {

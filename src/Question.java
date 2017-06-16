@@ -4,10 +4,10 @@ public class Question {
   private String[] answers;
   private String rightAnswer;
 
-  public Question(String text, String[] answers, int rightAnswerIdx) {
+  public Question(String text, String[] answers, String rightAnswer) {
     this.text = text;
     this.answers = answers;
-    this.rightAnswer = answers[rightAnswerIdx];
+    this.rightAnswer = rightAnswer;
   }
 
   public String getText() {

@@ -22,9 +22,9 @@ public class QuizCompiler {
       for (int i = 0; i < 4; i++) {
         answers[i] = answersReader.nextLine();
       }
-      int answerIndex = Integer.parseInt(rightAnswerReader.nextLine());
+      String rightAnswer = rightAnswerReader.nextLine();
 
-      questions.add(new Question(text, answers, answerIndex));
+      questions.add(new Question(text, answers, rightAnswer));
     }
 
     return questions;
