@@ -6,15 +6,21 @@ import java.util.List;
 
 /** Created by shannonsullivan on 6/9/17. */
 public class QuizInterface implements ActionListener {
-  private JFrame frame = new JFrame();
-  private int score = 0;
+  private JFrame frame;
+  private int score;
   private List<Question> quiz;
   private int currentQuestionIndex;
-  private String currentAnswer = "";
+  private String currentAnswer;
 
-  public void startQuiz(List<Question> quiz) {
+  public QuizInterface(List<Question> quiz) {
     this.quiz = quiz;
-    currentQuestionIndex = 0;
+    this.currentQuestionIndex = 0;
+    this.currentAnswer = "";
+    this.score = 0;
+    this.frame = new JFrame();
+  }
+
+  public void startQuiz() {
     askQuestion(quiz.get(currentQuestionIndex));
   }
 
