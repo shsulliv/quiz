@@ -7,19 +7,15 @@ import java.util.List;
 /** Created by shannonsullivan on 6/9/17. */
 public class QuizInterface implements ActionListener {
   private JFrame frame = new JFrame();
-  private final String SUBMIT_ACTION = "submit";
-  private final String SKIP_ACTION = "skip";
+  private int score = 0;
+  private List<Question> quiz;
+  private int currentQuestionIndex;
+  private String currentAnswer = "";
 
   public void startQuiz(List<Question> quiz) {
-    int score = 0;
-    for (Question question : quiz) {
-      askQuestion(question);
-    }
-
-    double percentage =
-        (((double) score) / quiz.size()) * 100; // score must be converted to a double
-
-    showResults(score, percentage, quiz);
+    this.quiz = quiz;
+    currentQuestionIndex = 0;
+    askQuestion(quiz.get(currentQuestionIndex));
   }
 
   private void askQuestion(Question question) {
@@ -39,7 +35,7 @@ public class QuizInterface implements ActionListener {
     ButtonGroup answerGroup = new ButtonGroup();
     JRadioButton[] answerButtons = new JRadioButton[answers.length];
     for (int i = 0; i < answers.length; i++) {
-      answerButtons[i] = new JRadioButton();
+      answerButtons[i] = new JRadioButton(answers[i]);
       answerButtons[i].setText(answers[i]);
       answerButtons[i].addActionListener(this);
       answerGroup.add(answerButtons[i]);
@@ -54,7 +50,7 @@ public class QuizInterface implements ActionListener {
 
     // Setup the button
     submitButton.setText("next");
-    submitButton.setActionCommand(SUBMIT_ACTION);
+    submitButton.setActionCommand("submit");
     submitButton.addActionListener(this);
     submitButton.setEnabled(true);
 
@@ -73,20 +69,36 @@ public class QuizInterface implements ActionListener {
     frame.setSize(600, 300);
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    //    if (input.equals(question.getRightAnswer())) {
-    //      score += 1;
-    //    }
   }
 
   public void actionPerformed(ActionEvent event) {
-    switch (event.getActionCommand()) {
-      case SUBMIT_ACTION:
-        System.out.println("Clicked");
-        break;
-      default:
-        System.out.println(event.getActionCommand());
+    if (event.getActionCommand().equals("submit")) {
+      handleSubmit(event);
+    } else {
+      handleSelection(event);
     }
+  }
+
+  private void handleSubmit(ActionEvent event) {
+    checkAnswer();
+    renderNextQuestion();
+  }
+
+  private void renderNextQuestion() {
+    frame.dispose();
+    frame = new JFrame();
+    currentQuestionIndex += 1;
+    askQuestion(quiz.get(currentQuestionIndex));
+  }
+
+  private void checkAnswer() {
+    if (currentAnswer.equals(quiz.get(currentQuestionIndex).getRightAnswer())) {
+      score += 1;
+    }
+  }
+
+  private void handleSelection(ActionEvent event) {
+    currentAnswer = event.getActionCommand();
   }
 
   private void showResults(int s, double p, List<Question> q) {
