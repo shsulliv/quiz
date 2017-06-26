@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbcf6ca2-d9f7-4105-bc49-54443e57d85f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Quiz.java" afterPath="$PROJECT_DIR$/src/Quiz.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QuizInterface.java" afterPath="$PROJECT_DIR$/src/QuizInterface.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,15 +41,17 @@
       <file leaf-file-name="QuizInterface.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/QuizInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="-261">
+              <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#597#598#0" expanded="true" />
                 <element signature="e#650#651#0" expanded="true" />
                 <element signature="method#askQuestion#0;class#QuizInterface#0" expanded="false" />
                 <element signature="method#actionPerformed#0;class#QuizInterface#0" expanded="false" />
-                <element signature="method#showResults#0;class#QuizInterface#0" expanded="false" />
+                <element signature="method#checkAnswer#0;class#QuizInterface#0" expanded="false" />
+                <element signature="e#3246#3247#0" expanded="true" />
+                <element signature="e#3299#3300#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,8 +139,8 @@
         <option value="$PROJECT_DIR$/src/QuizCompiler.java" />
         <option value="$PROJECT_DIR$/src/Question.java" />
         <option value="$PROJECT_DIR$/src/SubmitHandler.java" />
-        <option value="$PROJECT_DIR$/src/QuizInterface.java" />
         <option value="$PROJECT_DIR$/src/Quiz.java" />
+        <option value="$PROJECT_DIR$/src/QuizInterface.java" />
       </list>
     </option>
   </component>
@@ -672,12 +673,12 @@
       <workItem from="1497104271994" duration="690000" />
       <workItem from="1497263311873" duration="11877000" />
       <workItem from="1497618032676" duration="2713000" />
-      <workItem from="1498205834500" duration="12308000" />
+      <workItem from="1498205834500" duration="13076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57475000" />
+    <option name="totallyTimeSpent" value="58243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -762,8 +763,16 @@
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/QuizInterface.java</url>
+          <line>98</line>
+          <properties class="QuizInterface" method="renderNextQuestion">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -798,7 +807,9 @@
             <element signature="e#650#651#0" expanded="true" />
             <element signature="method#askQuestion#0;class#QuizInterface#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#QuizInterface#0" expanded="false" />
-            <element signature="method#showResults#0;class#QuizInterface#0" expanded="false" />
+            <element signature="method#checkAnswer#0;class#QuizInterface#0" expanded="false" />
+            <element signature="e#3246#3247#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -901,7 +912,9 @@
             <element signature="e#650#651#0" expanded="true" />
             <element signature="method#askQuestion#0;class#QuizInterface#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#QuizInterface#0" expanded="false" />
-            <element signature="method#showResults#0;class#QuizInterface#0" expanded="false" />
+            <element signature="method#checkAnswer#0;class#QuizInterface#0" expanded="false" />
+            <element signature="e#3246#3247#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -932,7 +945,9 @@
             <element signature="e#650#651#0" expanded="true" />
             <element signature="method#askQuestion#0;class#QuizInterface#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#QuizInterface#0" expanded="false" />
-            <element signature="method#showResults#0;class#QuizInterface#0" expanded="false" />
+            <element signature="method#checkAnswer#0;class#QuizInterface#0" expanded="false" />
+            <element signature="e#3246#3247#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1043,7 +1058,9 @@
             <element signature="e#650#651#0" expanded="true" />
             <element signature="method#askQuestion#0;class#QuizInterface#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#QuizInterface#0" expanded="false" />
-            <element signature="method#showResults#0;class#QuizInterface#0" expanded="false" />
+            <element signature="method#checkAnswer#0;class#QuizInterface#0" expanded="false" />
+            <element signature="e#3246#3247#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1178,15 +1195,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QuizInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="-261">
+          <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#597#598#0" expanded="true" />
             <element signature="e#650#651#0" expanded="true" />
             <element signature="method#askQuestion#0;class#QuizInterface#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#QuizInterface#0" expanded="false" />
-            <element signature="method#showResults#0;class#QuizInterface#0" expanded="false" />
+            <element signature="method#checkAnswer#0;class#QuizInterface#0" expanded="false" />
+            <element signature="e#3246#3247#0" expanded="true" />
+            <element signature="e#3299#3300#0" expanded="true" />
           </folding>
         </state>
       </provider>

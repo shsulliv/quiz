@@ -86,13 +86,17 @@ public class QuizInterface implements ActionListener {
   }
 
   private void handleSubmit(ActionEvent event) {
-    checkAnswer();
-    renderNextQuestion();
-  }
-
-  private void renderNextQuestion() {
     frame.dispose();
     frame = new JFrame();
+    checkAnswer();
+    if (currentQuestionIndex == quiz.size() - 1) {
+      showResults();
+    } else {
+      askNextQuestion();
+    }
+  }
+
+  private void askNextQuestion() {
     currentQuestionIndex += 1;
     askQuestion(quiz.get(currentQuestionIndex));
   }
@@ -107,17 +111,35 @@ public class QuizInterface implements ActionListener {
     currentAnswer = event.getActionCommand();
   }
 
-  private void showResults(int s, double p, List<Question> q) {
+  private double calculatePercentage() {
+    return ((double) score) / quiz.size() * 100;
+  }
+
+  private void showResults() {
     JPanel mainPanel = new JPanel();
     JPanel resultsPanel = new JPanel();
     JLabel resultsLabel = new JLabel();
 
-    if (p <= 50.0) {
+    double percentage = calculatePercentage();
+
+    if (percentage <= 50.0) {
       resultsLabel.setText(
-          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :(");
+          "Your score is "
+              + score
+              + "/"
+              + quiz.size()
+              + ". You got "
+              + percentage
+              + " percent right :(");
     } else {
       resultsLabel.setText(
-          "Your score is " + s + "/" + q.size() + ". You got " + p + " percent right :)");
+          "Your score is "
+              + score
+              + "/"
+              + quiz.size()
+              + ". You got "
+              + percentage
+              + " percent right :)");
     }
 
     resultsPanel.add(resultsLabel);
