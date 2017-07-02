@@ -18,3 +18,23 @@ Candy Bar
 Soup
 Alcoholic Beverage
 Milkshake
+Cake
+Pie
+Sundae
+Cookie
+Austria
+Germany
+France
+Belgium
+Flour
+Eggs
+Cream
+Caramel
+Chocolate
+Strawberry
+Pistachio
+Vanilla
+Tongue
+Teeth
+Throat
+Roof of mouth
