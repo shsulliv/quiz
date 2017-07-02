@@ -70,7 +70,7 @@ public class QuizInterface implements ActionListener {
 
     // Setup the frame
     frame.add(mainPanel);
-    frame.setTitle("Quiz Game");
+    frame.setTitle("Dessert Quiz");
     frame.pack();
     frame.setSize(600, 300);
     frame.setVisible(true);
@@ -146,7 +146,7 @@ public class QuizInterface implements ActionListener {
     mainPanel.setLayout(new BorderLayout());
     mainPanel.add(resultsPanel, BorderLayout.CENTER);
     frame.add(mainPanel);
-    frame.setTitle("Quiz Game");
+    frame.setTitle("Dessert Quiz");
     frame.pack();
     frame.setSize(600, 300);
     frame.setVisible(true);
